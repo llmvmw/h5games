@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5魔方游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>魔方游戏</h1>
+            <div class="stats">
+                <span id="move-count">步数: 0</span>
+                <span id="timer">时间: 00:00</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="game-area">
+                <div id="cube-container"></div>
+            </div>
+
+            <div class="controls">
+                <div class="rotation-controls">
+                    <h3>旋转控制</h3>
+                    <div class="control-group">
+                        <button onclick="rotateFace('U')">上层面(U)</button>
+                        <button onclick="rotateFace('U', true)">上层面逆时针</button>
+                    </div>
+                    <div class="control-group">
+                        <button onclick="rotateFace('D')">下层面(D)</button>
+                        <button onclick="rotateFace('D', true)">下层面逆时针</button>
+                    </div>
+                    <div class="control-group">
+                        <button onclick="rotateFace('L')">左面(L)</button>
+                        <button onclick="rotateFace('L', true)">左面逆时针</button>
+                    </div>
+                    <div class="control-group">
+                        <button onclick="rotateFace('R')">右面(R)</button>
+                        <button onclick="rotateFace('R', true)">右面逆时针</button>
+                    </div>
+                    <div class="control-group">
+                        <button onclick="rotateFace('F')">前面(F)</button>
+                        <button onclick="rotateFace('F', true)">前面逆时针</button>
+                    </div>
+                    <div class="control-group">
+                        <button onclick="rotateFace('B')">后面(B)</button>
+                        <button onclick="rotateFace('B', true)">后面逆时针</button>
+                    </div>
+                </div>
+
+                <div class="game-controls">
+                    <button onclick="shuffleCube()" class="shuffle-btn">打乱</button>
+                    <button onclick="resetCube()" class="reset-btn">重置</button>
+                    <button onclick="solveCube()" class="solve-btn" disabled>求解</button>
+                </div>
+
+                <div class="instructions">
+                    <h3>操作说明</h3>
+                    <ul>
+                        <li>鼠标拖拽：旋转视角</li>
+                        <li>使用上方按钮旋转各面</li>
+                        <li>键盘：U/D/L/R/F/B 旋转对应面</li>
+                        <li>Shift+字母：逆时针旋转</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="cube.js"></script>
+    <script src="controller.js"></script>
+</body>
+</html>
