@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H5 游戏集合</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <div class="menu-container">
+        <h1 class="title">🎮 H5 游戏集合</h1>
+        <p class="subtitle">选择一个游戏开始</p>
+
+        <div class="game-grid">
+            <div class="game-card" onclick="launchGame('rubiks.html')">
+                <div class="game-icon">🧊</div>
+                <h2>魔方游戏</h2>
+                <p>3D魔方还原挑战</p>
+                <div class="game-features">
+                    <span>3D渲染</span>
+                    <span>6面旋转</span>
+                    <span>自动求解</span>
+                </div>
+            </div>
+
+            <div class="game-card" onclick="launchGame('angry-birds.html')">
+                <div class="game-icon">🐦</div>
+                <h2>愤怒的小鸟</h2>
+                <p>弹弓射击物理游戏</p>
+                <div class="game-features">
+                    <span>弹弓机制</span>
+                    <span>物理碰撞</span>
+                    <span>目标击碎</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>使用方向键或点击图标选择游戏</p>
+        </div>
+    </div>
+
+    <script>
+        function launchGame(gameUrl) {
+            window.location.href = gameUrl;
+        }
+
+        // 键盘导航支持
+        document.addEventListener('keydown', (e) => {
+            const cards = document.querySelectorAll('.game-card');
+            const firstCard = cards[0];
+            const secondCard = cards[1];
+
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                firstCard.focus();
+            } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+                secondCard.focus();
+            } else if (e.key === 'Enter') {
+                document.activeElement.click();
+            }
+        });
+
+        // 使游戏卡片可聚焦
+        document.querySelectorAll('.game-card').forEach(card => {
+            card.tabIndex = 0;
+            card.addEventListener('focus', () => {
+                card.style.transform = 'scale(1.05)';
+            });
+            card.addEventListener('blur', () => {
+                card.style.transform = '';
+            });
+        });
+    </script>
+</body>
+</html>
