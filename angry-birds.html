@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>愤怒的小鸟 - H5游戏</title>
+    <link rel="stylesheet" href="bird-style.css">
+</head>
+<body>
+    <div class="game-wrapper">
+        <div class="game-header">
+            <h1>🐦 愤怒的小鸟</h1>
+            <div class="game-stats">
+                <span class="score">得分: <span id="score">0</span></span>
+                <span class="birds-left">剩余小鸟: <span id="birdsLeft">3</span></span>
+                <span class="pigs-left">剩余小猪: <span id="pigsLeft">5</span></span>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <canvas id="gameCanvas" width="800" height="500"></canvas>
+
+            <div class="controls">
+                <button id="resetBtn" class="control-btn">🔄 重新开始</button>
+                <button id="nextBirdBtn" class="control-btn" style="display:none;">🐦 下一个小鸟</button>
+                <button id="menuBtn" class="control-btn">🏠 返回菜单</button>
+            </div>
+
+            <div class="instructions">
+                <h3>🎯 游戏说明</h3>
+                <p>📌 <strong>操作方式：</strong></p>
+                <ul>
+                    <li>🖱️ 鼠标拖拽弹弓向后拉，瞄准后释放发射小鸟</li>
+                    <li>📱 触摸设备支持触摸拖拽</li>
+                    <li>⌨️ 键盘：空格键发射，R键重新开始</li>
+                </ul>
+                <p>🎯 <strong>目标：</strong>击碎所有小猪获得高分！</p>
+                <p>💡 <strong>提示：</strong>精确瞄准和合理的力度控制是关键</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="bird.js"></script>
+</body>
+</html>
